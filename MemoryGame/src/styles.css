@@ -1,0 +1,129 @@
+body{ 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+} 
+
+.container{ 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	height: 100vh; 
+} 
+
+.game-container{ 
+	width: 800px; 
+	padding: 20px; 
+	border-radius: 10px; 
+	row-gap: 15px; 
+	box-shadow: rgba(255, 252, 252, 0.2) 0px 2px 8px 0px; 
+	background-image: linear-gradient(90deg, #ffffff, #dab3e4); 
+} 
+
+.cards-container{ 
+	display: grid; 
+	grid-template-rows: 125px 125px 125px; 
+	grid-template-columns: 200px 200px 200px 200px; 
+	grid-gap: 20px 10px; 
+	place-items: center; 
+} 
+
+.heading-container{ 
+	text-align: center; 
+} 
+
+.panda-heading{ 
+	color: #800e9d; 
+} 
+
+.card{ 
+	justify-items: center; 
+	display: flex; 
+	align-items: center; 
+	position: relative; 
+	cursor: pointer; 
+} 
+
+.outline-image{ 
+	position: absolute; 
+	border-radius: 10px; 
+	top: 0; 
+	left: 0; 
+	height: 125px; 
+	width: 125px; 
+	border-radius: 50%; 
+} 
+
+.card-image{ 
+	height: 125px; 
+	width: 125px; 
+	transform: rotateY(90deg); 
+	transition: all ease-in 0.25s; 
+	mix-blend-mode: multiply; 
+} 
+
+.progress-container{ 
+	text-align: center; 
+	display: flex; 
+	justify-content: space-around; 
+	width: 100%; 
+	margin: 50px 0 20px 0; 
+} 
+
+.restart-button{ 
+	padding: 10px 20px; 
+	background-color: #800e9d; 
+	border: none; 
+	border-radius: 25px; 
+	color: #fff; 
+	cursor: pointer; 
+} 
+
+.restart-button:hover{ 
+	background-color: transparent; 
+	border: 1px solid #800e9d; 
+	color: #800e9d; 
+} 
+
+/* Dynamic classes that are being added by JavaScript */
+.toggled .card-image { 
+	transform: rotateY(0deg); 
+	transition-delay: 0.25s; 
+} 
+
+.item .outline-image { 
+	transition: all ease-in 0.25s; 
+	transition-delay: 0.25s; 
+} 
+	
+.toggled .outline-image { 
+	transform: rotateY(90deg); 
+	transition-delay: 0s; 
+} 
+
+@media screen and (max-width: 767px) { 
+	.game-container{ 
+		width: 100%; 
+	} 
+	
+	.cards-container{ 
+		grid-template-rows: 125px 125px 125px 125px; 
+		grid-template-columns: 33% 33% 33%; 
+		grid-gap: 10px 10px; 
+	} 
+
+	.outline-image{ 
+		height: 100px; 
+		width: 100px; 
+	} 
+	
+	.card-image{ 
+		height: 100px; 
+		width: 100px; 
+	} 
+
+	.progress-container{ 
+		margin: 10px 0 10px 0; 
+	} 
+	
+}
